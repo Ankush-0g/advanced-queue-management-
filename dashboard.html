@@ -1,29 +1,62 @@
-#   
-<!DOCTYPE html>  
-<html>  
-<head>  
-<title>User Dashboard</title>  
-<link rel="stylesheet" href="style.css">  
-</head>  
-<body>  
-  
-<div class="card">  
-  
-<h2>User Dashboard</h2>  
-  
-<p>Welcome 👋</p>  
-  
-<button onclick="book()">Book Token</button>  
-  
-<h3 id="info"></h3>  
-  
-<br>  
-  
-<button onclick="logout()">Logout</button>  
-  
-</div>  
-  
-<script src="app.js"></script>  
-  
-</body>  
-</html>  
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(-45deg,#1e3a8a,#2563eb,#7c3aed,#9333ea);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:16px;
+text-align:center;
+width:350px;
+}
+
+button{
+padding:12px;
+width:100%;
+margin-top:10px;
+border:none;
+border-radius:8px;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+}
+
+.token{
+margin-top:15px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>User Dashboard</h2>
+
+<button onclick="book()">Book Token</button>
+
+<div class="token" id="info"></div>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
