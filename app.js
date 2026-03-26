@@ -1,5 +1,5 @@
 #   
-const BASE_URL = "https://backend-6b1n.onrender.com";  
+const BASE_URL = "https://advance-queue-management-backend.onrender.com";  
   
   
 // ================= LOGIN =================  
