@@ -1,22 +1,50 @@
-#   
-<!DOCTYPE html>  
-<html>  
-<head>  
-<title>Live Queue</title>  
-<link rel="stylesheet" href="style.css">  
-</head>  
-<body>  
-  
-<div class="card">  
-  
-<h1>Now Serving</h1>  
-<h2 id="now">0</h2>  
-  
-<h3>Next Token: <span id="next">0</span></h3>  
-  
-</div>  
-  
-<script src="app.js"></script>  
-  
-</body>  
-</html>  
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Live Queue</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:black;
+color:#00ffcc;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+.screen{
+font-size:40px;
+}
+
+.now{
+font-size:80px;
+margin:20px;
+color:#22c55e;
+}
+
+.next{
+font-size:40px;
+color:#facc15;
+}
+</style>
+</head>
+
+<body>
+
+<div class="screen">
+
+<h1>NOW SERVING</h1>
+<div class="now" id="now">0</div>
+
+<div class="next">Next: <span id="next">0</span></div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
