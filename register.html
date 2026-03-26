@@ -16,6 +16,7 @@ background:linear-gradient(-45deg,#1e3a8a,#2563eb,#7c3aed,#9333ea);
 background-size:400% 400%;
 animation:bg 10s ease infinite;
 }
+
 @keyframes bg{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
@@ -37,6 +38,7 @@ box-shadow:0 10px 40px rgba(0,0,0,0.3);
 position:relative;
 margin:20px 0;
 }
+
 input,select{
 width:100%;
 padding:12px;
@@ -45,6 +47,15 @@ border-radius:8px;
 background:rgba(255,255,255,0.2);
 color:white;
 outline:none;
+}
+
+/* 👁 Toggle button */
+.toggle{
+position:absolute;
+right:10px;
+top:12px;
+cursor:pointer;
+font-size:14px;
 }
 
 button{
@@ -58,11 +69,6 @@ font-size:16px;
 cursor:pointer;
 }
 
-.error{
-color:#f87171;
-display:none;
-margin-top:10px;
-}
 </style>
 </head>
 
@@ -72,14 +78,18 @@ margin-top:10px;
 
 <h2>Create Account</h2>
 
+<!-- EMAIL -->
 <div class="input-box">
 <input type="email" id="email" placeholder="Email">
 </div>
 
+<!-- PASSWORD WITH TOGGLE 👁 -->
 <div class="input-box">
 <input type="password" id="password" placeholder="Password">
+<span class="toggle" onclick="togglePassword()">👁</span>
 </div>
 
+<!-- ROLE -->
 <div class="input-box">
 <select id="role">
 <option value="user">User</option>
@@ -91,10 +101,24 @@ margin-top:10px;
 
 <p>Already have an account? <a href="index.html">Login</a></p>
 
-<div class="error" id="error"></div>
-
 </div>
 
 <script src="app.js"></script>
+
+<script>
+
+/* 👁 Toggle Password */
+function togglePassword(){
+let pass = document.getElementById("password");
+
+if(pass.type === "password"){
+pass.type = "text";
+}else{
+pass.type = "password";
+}
+}
+
+</script>
+
 </body>
 </html>
