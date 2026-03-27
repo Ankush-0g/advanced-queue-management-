@@ -1,5 +1,4 @@
-#   
-const BASE_URL = "https://advance-queue-management-backend.onrender.com";  
+   const BASE_URL="https://advance-queue-management-backend.onrender.com";
   
   
 // ================= LOGIN =================  
@@ -15,7 +14,7 @@ async function login(){
   
     try{  
   
-        let res = await fetch(`${BASE_URL}/login`,{  
+        let res = await fetch('${BASE_URL}/login',{  
             method:"POST",  
             headers:{  
                 "Content-Type":"application/json"  
@@ -61,7 +60,7 @@ async function register(){
   
     try{  
   
-        let res = await fetch(`${BASE_URL}/register`,{  
+        let res = await fetch('${BASE_URL}/register',{  
             method:"POST",  
             headers:{  
                 "Content-Type":"application/json"  
@@ -98,7 +97,7 @@ async function book(){
   
     try{  
   
-        let res = await fetch(`${BASE_URL}/book`,{  
+        let res = await fetch('${BASE_URL}/book',{  
             method:"POST",  
             headers:{  
                 "Content-Type":"application/json"  
@@ -113,7 +112,7 @@ async function book(){
   
         if(res.ok){  
             document.getElementById("info").innerText =  
-                `Token Number: ${data.token_number} | Estimated Wait: ${data.estimated_time} mins`;  
+                'Token Number: ${data.token_number} | Estimated Wait: ${data.estimated_time} mins';  
         } else {  
             alert("Booking failed");  
         }  
@@ -130,19 +129,19 @@ async function nextToken(){
   
     try{  
   
-        let res = await fetch(`${BASE_URL}/tokens`);  
+        let res = await fetch('${BASE_URL}/tokens');  
         let data = await res.json();  
   
         let next = data.find(t => t.status === "waiting");  
   
         if(next){  
   
-            await fetch(`${BASE_URL}/update/${next.token_number}?status=served`,{  
-                method:"PUT"  
+            await fetch('${BASE_URL}/update/${next.token_number}?status=served',{  
+                method:"PUT" 
             });  
   
             document.getElementById("adminInfo").innerText =  
-                `Now Serving Token: ${next.token_number}`;  
+                'Now Serving Token: ${next.token_number}';  
   
         } else {  
             document.getElementById("adminInfo").innerText =  
@@ -161,7 +160,7 @@ async function liveDisplay(){
   
     try{  
   
-        let res = await fetch(`${BASE_URL}/queue-display`);  
+        let res = await fetch('${BASE_URL}/queue-display');  
         let data = await res.json();  
   
         document.getElementById("now").innerText = data.now_serving;  
