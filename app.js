@@ -64,8 +64,12 @@ async function register(){
             method:"POST",  
             headers:{  
                 "Content-Type":"application/json"  
-            },  
-            body:JSON.stringify({email,password,role})  
+            },
+           body: JSON.stringify({
+               email: email.trim(),
+               password: password.trim(),
+               role: role
+           })
         });  
   
         let data = await res.json();  
@@ -106,9 +110,16 @@ async function book(){
                 user_email: email,  
                 service: "general"  
             })  
-        });  
-  
-        let data = await res.json();  
+        });
+       let data 
+          try {
+             data = await res.json();
+          } catch {
+             let text = await res.text();
+             console.error("Not JSON:", text);
+             alert("Server error");
+             return;
+}
   
         if(res.ok){  
             document.getElementById("info").innerText =  
